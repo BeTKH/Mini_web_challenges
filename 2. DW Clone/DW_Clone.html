@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DW clone</title>
+
+	<style type="text/css">
+		
+		#logo-bar {
+
+			height: 65px;
+			width: 1000px;
+			margin: 0 auto;
+			background-color: white;
+		}
+
+		#dw-logo{
+
+			height: 55px;
+			position: relative;
+			top: 5px;
+			left: -2px;
+			float: left;
+		}
+
+		#quote{
+
+			color: #0087eb;
+			font-size: 120%;
+			font-family: sans-serif;
+			position: relative;
+			top: 5px;
+			left: 5px;
+			float: left;
+		}
+
+		#search-box{
+			position: relative;
+			height: 20px;
+			width: 250px;
+			top: 20px;
+			right: 0px;
+			border: 1px solid grey;
+			float: right;
+		}
+
+		#magnifying-glass{
+
+			position: relative;
+			top: 22px;
+			right: -750px;
+			height: 20px;
+			background: none;
+			background-color: #C37500;
+			float: left;
+
+		}
+
+		#magnifying-glass:hover{
+
+			background-color: #red;
+  			opacity:0.5 !important;
+  			filter:alpha(opacity=70) !important; /* For IE8 and earlier */
+  			box-shadow: 0 0 0px #000000 !important;
+		}
+
+		#clear-floats{
+			float: none;
+		}
+
+		#menu-bar{
+
+			margin: 0 auto;
+			height: 65px;
+			width: 1000px;
+			background-color: #0098FF;
+		}
+
+
+		.menu-bar-text{
+
+			color: white;
+			margin: 20px 25px 0px 22px;
+			font-family: Arial, Helvetica, sans-serif;
+			font-weight: bold;
+			font-size: 140%;
+			text-decoration: none;
+			float: left;
+			
+		}
+
+		
+		.menu-bar-text a{
+
+			text-decoration: none;
+			color: white;
+		}
+
+		.menu-bar-text a:hover{
+
+			text-decoration: none;
+			color: black;
+		}
+
+		#sub-menu-bar{
+			border-top: 1px solid white;
+			margin: 0 auto;
+			height: 40px;
+			width: 1000px;
+			background-color: #0098FF;
+
+	
+		}
+
+		.sub-menu-bar-text a{
+
+			margin: 2px 5px 0px 22px;
+			font-size: 105%;
+			text-decoration: none;
+			color: #99CCFF;
+			font-family: Arial, Helvetica, sans-serif;
+			float: left;
+;
+		}
+
+		.sub-menu-bar-text a:hover{
+
+			text-decoration: none;
+			color: white;
+		}
+
+		#sports-tab-color{
+
+			color: white;
+		}
+
+		#current-section-bar {
+
+			
+		
+			height: 30px;
+			width: 1000px;
+			margin: 0 auto;
+			color: white;
+			background-color: white;
+			
+
+		}
+
+		#current-section-text{
+			color: grey;
+			float: left;
+			margin: 10px 2px 0px 22px;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		#top-content-container{
+
+			height: 420px;
+			width: 1000px;
+			margin: 0 auto;
+			background-color: white;
+		}
+
+		#top-content-container-right{
+
+
+			border-top: 2px solid #DCDCDC;
+			height: 400px;
+			width: 750px;
+			margin: 10px 50px 0px 0px;
+			background-color: white;
+			float: left;
+		}
+
+		#top-content-container-left{
+
+			height: 400px;
+			width: 200px;
+			background-color: grey;
+			margin: 10px 0px 0px 0px;
+			float: left;
+		}
+
+		#talking-points{
+
+			color: blue;
+			font-family: Arial, Helvetica, sans-serif;
+			border: 1px solid white;
+			margin: 10px 0 0 0;
+
+		}
+
+		#headline-text{
+
+			color: #404040;
+			font-size: 40px;
+			font-family: Georgia, Times, serif;
+		}
+
+		.headline-content-text{
+
+			color: #404040;
+			font-size: 18px;
+			font-family: Georgia, Times, serif;
+			line-height: 26pt;
+		}
+
+		#social-links-container{
+
+			border: 1px solid none;
+			height: 60px;
+			width: 275px;
+			margin: 10px 50px 0px 0px;
+			background-color: white;
+			float: left;
+		}
+
+		.social-liks{
+
+			height: 40px;
+			margin: 0px 5px 0 0;
+		}
+
+		#figure-container{
+
+
+			height: 460px;
+			width: 1000px;
+			margin: 0 auto;
+			background-color: white;
+
+		}
+
+		#main-figure{
+
+			height: 430px;
+			padding: 0;
+
+		}
+
+		#figure-caption{
+
+			position: relative;
+			top: -12px;
+			color: grey;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		#mimi-title{
+
+			font-size: 25px;
+		}
+
+	
+
+		#body-text-container{
+
+			height: 380px;
+			width: 1000px;
+			margin: 0 auto;
+			background-color: white;
+
+
+		}
+
+		#lower-body-text-container{
+
+			height: 600px;
+			width: 1000px;
+			margin: 0 auto;
+			background-color: white;
+
+		}
+
+		#last-body-text-container{
+
+			height: 360px;
+			width: 1000px;
+			margin: 0 auto;
+			background-color: white;
+
+		}
+
+
+		.body-text{
+
+			color: #404040;
+			font-size: 18px;
+			font-family: Georgia, Times, serif;
+			line-height: 26pt;
+
+		}
+
+		.body-text a {
+			text-decoration: none;
+			color: #0098FF;
+		}
+
+		.body-text a:hover {
+			text-decoration: underline;
+			color: black;
+		}
+
+
+		#tweets-container-1{
+
+			height: 800px;
+			width: 1000px;
+			margin: 0 auto;
+			background-color: white;
+		}
+
+		#tweets-container-2{
+
+			height: 800px;
+			width: 1000px;
+			margin: 0 auto;
+			background-color: white;
+		}
+
+		#footer-bar-menu{
+
+			
+			height: 400px;
+			width: 1000px;
+			margin: 0 auto;
+			z-index: 1;
+			background-color: #0098ff;
+		}
+
+		#sub-footer-setction{
+
+			padding-top: 30px;
+			border: 1px solid none;
+			height: 350px;
+			width:150px;
+			background-color: #0098ff;
+			float: left;
+		}
+
+		#sub-footer-setction-2{
+
+			padding-top: 30px;
+			border: 1px solid none;
+			height: 350px;
+			width:150px;
+			background-color: #0098ff;
+			float: left;
+		}
+
+		#sub-footer-setction-3{
+
+			padding-top: 30px;
+			border: 1px solid none;
+			height: 350px;
+			width:150px;
+			background-color: #0098ff;
+			float: left;
+		}
+
+		#sub-footer-setction-4{
+
+			padding-top: 30px;
+			border: 1px solid none;
+			height: 350px;
+			width:150px;
+			background-color: #0098ff;
+			float: left;
+		}
+
+		#sub-footer-setction-5{
+
+			padding-top: 30px;
+			border: 1px solid none;
+			height: 350px;
+			width:150px;
+			background-color: #0098ff;
+			float: left;
+		}
+
+		#sub-footer-setction-6{
+
+			padding-top: 30px;
+			border: 1px solid none;
+			height: 350px;
+			width:150px;
+			background-color: #0098ff;
+			float: left;
+		}
+
+		.footer-text{
+
+
+			border: 1px solid none;
+			margin: 10px 0px 0px 30px;
+			color: white;
+			font-size: 80%;
+			font-family: Arial, Helvetica, sans-serif;
+
+		}
+
+		#top-content-container-left{
+
+			height: 400px;
+			width: 200px;
+			background-color: white;
+			margin: 10px 0px 0px 0px;
+			float: left;
+		}
+
+		.left-content{
+
+			border-top: 1px solid #E8E8E8;
+			color: grey;
+			margin: 0px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 100%;
+			
+		}
+
+		.left-content  a{
+			text-decoration: none;
+			color: #0098ff;
+		}
+
+		.left-content a:hover{
+			text-decoration: underline;
+		}
+
+		.bold_{
+			font-weight: bold;
+		}
+
+		.footer-text a {
+			text-decoration: none;
+			color: white;
+		}
+
+		.footer-text a:hover{
+			text-decoration: underline;
+		}
+
+
+	</style>
+
+</head>
+<body>
+
+	<div>
+		
+		<div id="logo-bar">
+			
+			<img id="dw-logo" src="img/dwlogo.JPG">
+
+			<p id="quote">Made for minds.</p>
+
+			<input id="search-box" type="" name="" placeholder="Search TOP STORIES">
+
+			<input id="magnifying-glass" type="image" src="img/mag.JPG">
+
+		</div>
+
+		<div id="clear-floats"></div>
+
+		<div id="menu-bar">
+			
+			<h2 class="menu-bar-text"><a href="">TOP STORIES</a></h2>
+
+			<h2 class="menu-bar-text"><a href="">MEDIA CENTER</a></h2>
+
+			<h2 class="menu-bar-text"><a href="">TV</a></h2>
+
+			<h2 class="menu-bar-text"><a href="">RADIO</a></h2>
+
+			<h2 class="menu-bar-text"><a href="">LEARN GERMAN</a></h2>
+
+		</div>
+
+		<div id="clear-floats"></div>
+
+		<div id="sub-menu-bar">
+			
+			<p class="sub-menu-bar-text"><a href="">GERMANY</a></p>
+
+			<p class="sub-menu-bar-text"><a href="">CORONAVIRUS</a></p>
+
+			<p class="sub-menu-bar-text"><a href="">WORLD</a></p>
+
+			<p class="sub-menu-bar-text"><a href="">BUSINESS</a></p>
+
+			<p class="sub-menu-bar-text"><a href="">SCIENCE</a></p>
+
+			<p class="sub-menu-bar-text"><a href="">ENVIRONMENT</a></p>
+
+			<p class="sub-menu-bar-text"><a href="">CULTURE</a></p>
+
+			<p class="sub-menu-bar-text"><a href=""><span id="sports-tab-color">SPORTS</span></a></p>
+
+		</div>
+
+		<div id="clear-floats"></div>
+
+		<div id="current-section-bar" ><p id="current-section-text">TOP STORIES / SPORTS</p></div>
+
+		<div id="clear-floats"></div>
+
+		<div id="top-content-container">
+			
+			<div id="top-content-container-right">
+				
+				<div id="talking-points">TALKING POINTS</div>
+
+				<p id="headline-text">Women's football: Changing of the guard in the Bundesliga put on hold</p>
+
+				<p class="headline-content-text">This week's talking points from women's football include the return of a title race in the Women's Bundesliga, the European Super League and the end of Olympique Lyon's amazing run in the Champions League.</p>
+
+				<div id="social-links-container">
+					
+					<input type="image" class="social-liks" alt="social-links" src="img/log1.JPG">
+
+					<input type="image" class="social-liks" alt="social-links" src="img/logt.JPG">
+
+					<input type="image" class="social-liks" alt="social-links" src="img/logr.JPG">
+
+					<input type="image" class="social-liks" alt="social-links" src="img/loge.JPG">
+
+					<input type="image" class="social-liks" alt="social-links" src="img/logm.JPG">
+
+				</div>
+
+			</div>
+
+			<div id="top-content-container-left">
+
+				<p class="left-content"><span class="bold_">Date</span> 19.04.2021</p>
+
+				<p class="left-content"><span class="bold_">Author</span> Jasmina Schweimler</p>
+
+				<p class="left-content"><span class="bold_">Related Subjects</span> <a href="">Bayern Munich</a>, <a href="">UEFA Champions League, </a><a href="">Bundesliga Latest</a></p>
+
+				<p class="left-content"><span class="bold_">Keywords</span><a href="">Women's Bundesliga, </a><a href="">European Super League, </a><a href="">Paris Saint-Germain, </a><a href="">Lyon, </a><a href="">women's Bundesliga, </a><a href="">Bayern Munich, </a></p>
+
+				<p class="left-content"><a href=""> Send us feedback</a></p>
+
+				<p class="left-content"><span class="bold_">Print</span><a href=""> Print this page</a></p>
+
+				<p class="left-content"><span class="bold_">Permalink:</span><a href="https://p.dw.com/p/3sDFq" target="_blank">https://p.dw.com/p/3sDFq</a></p>
+
+			</div>
+
+		</div>
+
+		<div id="clear-floats"></div>
+
+		<div id="figure-container">
+			
+			<img id="main-figure" alt="social-links" src="img/fig.JPG">
+
+			<p id="figure-caption">Bayern Munich and Wolfsburg are set for a tight title fight</p>
+
+		</div>
+
+		<div id="clear-floats"></div>
+
+
+
+		<div id="body-text-container">
+			
+			<p><span id="mimi-title">A title race in Germany</span></p>
+
+			<p class="body-text">The title race in the Women's Bundesliga is wide open again. Front runners Bayern Munich stumbled against third-placed Hoffenheim on Saturday evening, losing 3-2 after being two goals up.</p>
+
+			<p class="body-text">"In sport you have to get up again and we still have everything in our own hands," head coach Jens Scheuer said afterwards.</p>
+
+			<p class="body-text">With second-placed Wolfsburg beating Freiburg the next day, Bayern's lead has now shrunk to just two points. The loss against Hoffenheim was Bayern's second of the season overall, but first in the Bundesliga. Jens Scheuer's team <a href=""> lost the German Cup semifinal against Wolfsburg at the beginning of April.</a></p>
+
+			<p class="body-text">On May 9, the top two meet in what could be a title decider. But before that, Bayern have the tougher schedule. They have to play a strong <a href="">Turbine Potsdam</a> and twice contend with Chelsea in the Champions League semifinals.</p>
+
+		</div>
+
+		<div id="tweets-container-1">
+			
+
+			<blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">🔴🤦 Bayern suffered their first defeat of the season in the Women&#39;s Bundesliga.<br><br>Despite a strong start against Hoffenheim, the visitors turned the match around to stun Bayern in the second half 🙌 <a href="https://t.co/oWu0V9Rt7N">pic.twitter.com/oWu0V9Rt7N</a></p>&mdash; DW Sports (@dw_sports) <a href="https://twitter.com/dw_sports/status/1383872919353257985?ref_src=twsrc%5Etfw">April 18, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+		</div>
+
+		<div id="lower-body-text-container">
+			
+
+			<p class="body-text">Already out of the Champions League and with only struggling Duisburg up before Bayern, Wolfsburg have a slight advantage.</p>
+
+			<p class="body-text">"We have it in our own hands again, we have to keep doing our homework though. The situation doesn't change the fact that we have to win the game against Bayern. I am convinced that we have the mentality and fighting attitude that it takes to do just that," Wolfsburg attacker Svenja Huth said.</p>
+
+			<p class="body-text">The Bundesliga hasn't been this exciting in quite a while now. For the past four years it has always been Wolfsburg who grabbed the trophy, usually comfortably, while Bayern’s last Bundesliga title was back in 2016. The ambitions in Munich are clear. They want to take over the number one spot from Wolfsburg after often being second best. But the defending champions have proved that they are not easily dethroned.</p>
+
+			
+			<p><span id="mimi-title">OL's reign coming to an end</span></p>
+
+			<p class="body-text">For the past five years, Olympique Lyon have won the women's Champions League. The French team became the side everybody feared. But their impressive and dominant run on Europe's biggest stage came to an end after 1,788 days on Saturday, when Paris Saint-Germain knocked them out in the quarterfinal.</p>
+
+
+			<p class="body-text">Lyon won the first leg at the end of March 1-0, but PSG managed to come back in the second-leg and won 2-1, making it through to the semifinal thanks to the away goal rule. OL defender Wendie Renard scored an own goal to help PSG through in a dramatic match.  The second-leg was delayed after a COVID-19 outbreak within the Lyon team, which at one point affected 15 people. </p>
+
+		</div>
+
+		<div id="tweets-container-2">
+			
+			<blockquote class="twitter-tweet tw-align-center"><p lang="es" dir="ltr">😍 Full-time 𝙨𝙘𝙚𝙣𝙚𝙨 in Décines!<br><br>💫 <a href="https://twitter.com/PSG_Feminines?ref_src=twsrc%5Etfw">@PSG_Feminines</a> 💫<a href="https://twitter.com/hashtag/UWCL?src=hash&amp;ref_src=twsrc%5Etfw">#UWCL</a> <br><br> <a href="https://t.co/gvpGjcgIix">pic.twitter.com/gvpGjcgIix</a></p>&mdash; UEFA Women’s Champions League (@UWCL) <a href="https://twitter.com/UWCL/status/1383791612216500238?ref_src=twsrc%5Etfw">April 18, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+		</div>
+
+		<div id="last-body-text-container">
+			
+
+			<p class="body-text">Beating Lyon was a success on its own as Paris have been runners-up in the French league for eight years in a row now, always falling short to Lyon. But PSG, as big a club as they are, have also never managed to win the Champions League. They've been runners-up in 2014-2015 and 2016-2017. They now face Barcelona in the semifinal. </p>
+
+			
+
+			<p><span id="mimi-title">Women's European Super League proposed</span></p>
+
+			<p class="body-text">While nothing has been confirmed, the founders of the newly-proposed men's <a href="">European Super League</a> said in a statement on Sunday evening that there are plans afoot for a women's version.</p>
+
+			<p class="body-text">"As soon as practicable after the start of the men’s competition, a corresponding women’s league will also be launched, helping to advance and develop the women’s game," it read. Watch this space.</p>
+
+		</div>
+
+		<div id="clear-floats"></div>
+
+
+		<div id="footer-bar-menu">
+			
+			<div id="sub-footer-setction"> 
+
+				<p class="footer-text"><a href="">TOP STORIES</a></p>
+
+				<p class="footer-text"><a href="">Germany</a></p>
+
+				<p class="footer-text"><a href="">Coronavirus</a></p>
+
+				<p class="footer-text"><a href="">World</a></p>
+
+				<p class="footer-text"><a href="">Business</a></p>
+
+				<p class="footer-text"><a href="">Science</a></p>
+
+				<p class="footer-text"><a href="">Environment</a></p>
+
+				<p class="footer-text"><a href="">Culture</a></p>
+
+				<p class="footer-text"><a href="">Sports</a></p>
+
+			</div>
+
+			<div id="sub-footer-setction-2"> 
+
+				<p class="footer-text"><a href="">MEDIA CENTER</a></p>
+
+				<p class="footer-text"><a href="">Live TV</a></p>
+
+				<p class="footer-text"><a href="">All media content</a></p>
+
+				<p class="footer-text"><a href="">Latest Programs</a></p>
+
+				<p class="footer-text"><a href="">Podcasts</a></p>
+
+			
+
+			</div>
+
+			<div id="sub-footer-setction-3"> 
+
+				<p class="footer-text"><a href="">TV</a></p>
+
+				<p class="footer-text"><a href="">Schedule and Reception</a></p>
+
+				<p class="footer-text"><a href="">TV Programs</a></p>
+
+				<p class="footer-text"><a href="">RADIO</a></p>
+
+				
+
+			</div>
+
+			<div id="sub-footer-setction-5"> 
+
+				<p class="footer-text"><a href="">LEARN GERMAN</a></p>
+
+				<p class="footer-text"><a href="">German Courses</a></p>
+
+				<p class="footer-text"><a href="">German XXL</a></p>
+
+				<p class="footer-text"><a href="">Community D</a></p>
+
+				<p class="footer-text"><a href="">Teaching German</a></p>
+			</div>
+
+			<div id="sub-footer-setction-6"> 
+
+				<p class="footer-text"><a href="">ABOUT DW</a></p>
+
+				<p class="footer-text"><a href="">Who we are</a></p>
+
+				<p class="footer-text"><a href="">Press</a></p>
+
+				<p class="footer-text"><a href="">GMF</a></p>
+
+				<p class="footer-text"><a href="">Business & Sales</a></p>
+
+				<p class="footer-text"><a href="">Advertising</a></p>
+
+				<p class="footer-text"><a href="">Travel</a></p>
+
+			</div>
+
+			<div id="sub-footer-setction-4"> 
+
+				<p class="footer-text"><a href="">SERVICE</a></p>
+
+				<p class="footer-text"><a href="">Reception</a></p>
+
+				<p class="footer-text"><a href="">Apps & Co.</a></p>
+
+				<p class="footer-text"><a href="">Newsletters & Co.</a></p>
+
+				<p class="footer-text"><a href="">FAQ</a></p>
+
+				<p class="footer-text"><a href="">Contact</a></p>
+
+				<p class="footer-text"><a href="">DW AKADEME</a></p>
+
+				<p class="footer-text"><a href="">About Us</a></p>
+
+				<p class="footer-text"><a href="">Master's Degree</a></p>
+
+				<p class="footer-text"><a href="">Traineeship</a></p>
+
+				<p class="footer-text"><a href="">Training</a></p>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+</html>
+
+
