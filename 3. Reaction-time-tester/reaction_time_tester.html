@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>reaction-time</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+
+        .text_style{
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+        }
+
+        #shapes_{
+            width: 200px;
+            height:200px;
+            background-color: green;
+            border-radius: 100px;
+            margin: 40px;
+        }
+
+        #time-taken{
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<h1 class="text_style">Test Your reactions!</h1>
+<p class="text_style">Click on the boxes and circles as quickely as u can!</p>
+
+<p class="text_style">Your time: <span id="time-taken"></span> </p>
+
+<div id="shapes_"></div>
+<body id="body-part">
+
+    <script type="text/javascript">
+
+        var startTime = new Date().getTime();
+
+        document.getElementById("shapes_").onclick = function () {
+
+            document.getElementById("shapes_").style.display = 'none'
+
+            var endTime = new Date().getTime();
+
+            var timeTaken =  (endTime - startTime )/1000;
+
+            document.getElementById("time-taken").innerHTML = " "+ timeTaken +" sec";
+        }
+
+    </script>
+
+</body>
+</html>
