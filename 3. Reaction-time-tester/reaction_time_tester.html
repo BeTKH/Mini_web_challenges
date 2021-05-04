@@ -18,22 +18,29 @@
         #your-time{
             color: red;
             font-weight: bold;
-            text-decoration: underline;
+
         }
 
-        #all-time{
+        #best-time{
             color: green;
             font-weight: bold;
-            text-decoration: underline;
+
+        }
+
+        #avg-time{
+            color: blue;
+            font-weight: bold;
         }
 
     </style>
 </head>
 <body>
     <h1>Test your reaction!</h1>
-    <P>Your recation time is: <span id="your-time"></span> </P>
+    <P>Your recation time is:  <span id="your-time"></span> </P>
 
-    <p>All list of Reaction Times:<span id="all-time"></span></p>
+    <p>Fastest Reaction Time:  <span id="best-time"></span></p>
+
+    <P>Average Reaction time:  <span id="avg-time"></span></P>
     <div id="shape"></div>
 
     <script type="text/javascript">
@@ -101,13 +108,21 @@
 
 
             // show reaction time on click
-            document.getElementById("your-time").innerHTML = reactionTime+" Sec";
+            document.getElementById("your-time").innerHTML =Math.floor(reactionTime*100)+"  Sec";
 
-            // all reaction time
-            document.getElementById("all-time").innerHTML = allrxnTimes;
+            // fastest time
+            //document.getElementById("best-time").innerHTML = Math.min.apply(Math, allrxnTimes)+"Sec";
 
-            // the best rxn time
-           // document.getElementById("best-time").innerHTML =  Array.min(allrxnTimes);
+            document.getElementById("best-time").innerHTML = Math.floor(Math.min(... allrxnTimes)*100)+"  Sec"; // using spread operator ... within Math.min()
+
+            //avg rxn time
+
+            var total=0;
+            for(var i in allrxnTimes) { total += allrxnTimes[i]; }
+
+            var averageTime = total / allrxnTimes.length;
+
+            document.getElementById("avg-time").innerHTML = Math.floor(averageTime*100) +"  Sec";
 
             // remove shape after click
             document.getElementById("shape").style.display = "none";
