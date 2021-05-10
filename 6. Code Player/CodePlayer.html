@@ -2,8 +2,125 @@
 <html>
 <head>
     <title>CodePlayer</title>
+
+    <!--INCLUDE jQUERY-->
+    <script type="text/javascript" src="jquery360.js"></script>
+
+    <style type="text/css">
+
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        #header{
+            height: 30px;
+            width: 100%;
+            background-color: #EEEEEE;
+            padding: 5px;
+        }
+
+        #logo{
+            float: left;
+            font-weight: bold;
+            font-size: 120%;
+            padding-top: 3px 5px;
+
+        }
+
+        #buttonContainer{
+            width: 233px;
+            margin: 0 auto;
+        }
+
+        .toggleButton{
+            float: left;
+            border: 1px solid grey;
+            border-right: none;
+            padding: 6px;
+            font-size: 90%;
+
+        }
+
+        #html{
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        #output{
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            border-right: 1px solid grey;
+        }
+
+        .active{
+            background-color: #E8F2FF;
+        }
+
+        /* on hover turns the toggle buttons to grey*/
+        .highlightedbutton{
+            background-color: grey;
+        }
+
+        textarea{
+            resize: none;
+            width: 50%;
+        }
+
+
+
+    </style>
 </head>
 <body>
+
+    <div id="header">
+
+        <div id="logo">CodePlayer</div>
+
+        <div id="buttonContainer">
+
+            <div class="toggleButton active" id="html">HTML</div>
+
+            <div class="toggleButton" id="css">CSS</div>
+
+            <div class="toggleButton" id="javascript">JavaScript</div>
+
+            <div class="toggleButton active" id="output">Output</div>
+
+
+
+        </div>
+
+    </div>
+
+    <div id="bodyContainer">
+
+        <textarea id="htmlPanel">Hello world!</textarea>
+
+        <iframe id="outputPanel"></iframe>
+
+
+    </div>
+
+    <script type="text/javascript">
+
+        $(".toggleButton").hover(function(){
+            $(this).addClass("highlightedbutton"); // on hover make the toggle buttons grey
+        }, function(){
+            $(this).removeClass("highlightedbutton"); // // off hover make the toggle buttons back to their original color
+        });
+
+        // when the user clicks on the toggle button add or remove active class
+         $(".toggleButton").click(function(){
+            $(this).toggleClass("active"); // on click make/brake the toggle buttons lightblue
+            $(this).removeClass("highlightedbutton"); // remove the highlighting effect after click to see the selection
+
+        });
+
+         $("textarea").height($(window).height() - $("#header").height()-15);
+
+    </script>
 
 </body>
 </html>
