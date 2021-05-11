@@ -65,7 +65,23 @@
 
         textarea{
             resize: none;
+            border-top: none;
+            border-color: grey;
+        }
+
+        iframe{
+            border: none;
+
+        }
+
+        .panel{
+            float: left;
             width: 50%;
+            border-left: none;
+        }
+
+        .hidden{
+            display: none;
         }
 
 
@@ -89,16 +105,19 @@
             <div class="toggleButton active" id="output">Output</div>
 
 
-
         </div>
 
     </div>
 
     <div id="bodyContainer">
 
-        <textarea id="htmlPanel">Hello world!</textarea>
+        <textarea id="htmlPanel" class="panel">Hello world!</textarea>
 
-        <iframe id="outputPanel"></iframe>
+        <textarea id="cssPanel" class="panel hidden">Hello world!</textarea>
+
+        <textarea id="javascriptPanel" class="panel hidden">alert("Hi there!");</textarea>
+
+        <iframe id="outputPanel" class="panel"></iframe>
 
 
     </div>
@@ -108,7 +127,8 @@
         $(".toggleButton").hover(function(){
             $(this).addClass("highlightedbutton"); // on hover make the toggle buttons grey
         }, function(){
-            $(this).removeClass("highlightedbutton"); // // off hover make the toggle buttons back to their original color
+            $(this).removeClass("highlightedbutton"); // off hover make the toggle buttons back to their original color
+
         });
 
         // when the user clicks on the toggle button add or remove active class
@@ -116,9 +136,26 @@
             $(this).toggleClass("active"); // on click make/brake the toggle buttons lightblue
             $(this).removeClass("highlightedbutton"); // remove the highlighting effect after click to see the selection
 
+            var panelId = $(this).attr("id")+"Panel";  // get the panel id when toggle button is clicked
+            //alert(panelId);
+
+            $("#"+panelId).toggleClass("hidden");
+
+            var numberOfActivePanels = 4 - $(".hidden").length;
+             $(".panel").width(($(window).width()/numberOfActivePanels) -10);
         });
 
-         $("textarea").height($(window).height() - $("#header").height()-15);
+         $(".panel").height($(window).height() - $("#header").height()-15);
+
+
+
+         $("iframe").contents().find("html").html($('#htmlPanel').val());
+
+
+         // show the user code on the text area
+         $("textarea").on('change keyup paste', function() {
+                $("iframe").contents().find("html").html($('#htmlPanel').val());
+            });
 
     </script>
 
