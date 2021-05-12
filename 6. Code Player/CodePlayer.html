@@ -111,11 +111,11 @@
 
     <div id="bodyContainer">
 
-        <textarea id="htmlPanel" class="panel">Hello world!</textarea>
+        <textarea id="htmlPanel" class="panel"><p id="paragraph">Hello world!</p></textarea>
 
-        <textarea id="cssPanel" class="panel hidden">Hello world!</textarea>
+        <textarea id="cssPanel" class="panel hidden">p { color: green;}</textarea>
 
-        <textarea id="javascriptPanel" class="panel hidden">alert("Hi there!");</textarea>
+        <textarea id="javascriptPanel" class="panel hidden">document.getElementById("paragraph").innerHTML = "Hello Rob!";</textarea>
 
         <iframe id="outputPanel" class="panel"></iframe>
 
@@ -124,12 +124,27 @@
 
     <script type="text/javascript">
 
+
+        function updateOutPut(){
+
+             // CSS STYLE
+             $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#cssPanel").val() + "</style></head><body>" + $("#htmlPanel").val() + "</body></html>");
+
+             //JS
+             document.getElementById("outputPanel").contentWindow.eval($("#javascriptPanel").val());
+        }
+
+
+        // WHAT HAPPENS ON OVER OVER TOGGLE KEYS
+
         $(".toggleButton").hover(function(){
             $(this).addClass("highlightedbutton"); // on hover make the toggle buttons grey
         }, function(){
             $(this).removeClass("highlightedbutton"); // off hover make the toggle buttons back to their original color
 
         });
+
+
 
         // when the user clicks on the toggle button add or remove active class
          $(".toggleButton").click(function(){
@@ -139,6 +154,8 @@
             var panelId = $(this).attr("id")+"Panel";  // get the panel id when toggle button is clicked
             //alert(panelId);
 
+
+            // show or hide panel up on click
             $("#"+panelId).toggleClass("hidden");
 
             var numberOfActivePanels = 4 - $(".hidden").length;
@@ -146,15 +163,15 @@
         });
 
          $(".panel").height($(window).height() - $("#header").height()-15);
+         $(".panel").width(($(window).width() / 2) - 10);
 
 
-
-         $("iframe").contents().find("html").html($('#htmlPanel').val());
-
+         //  Call CSS nad JS
+         updateOutPut();
 
          // show the user code on the text area
          $("textarea").on('change keyup paste', function() {
-                $("iframe").contents().find("html").html($('#htmlPanel').val());
+                $updateOutPut();
             });
 
     </script>
